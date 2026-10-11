@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grão de Bruma Cafés Especiais</title>
+<meta name="description" content="Cafés especiais da Mantiqueira de Minas com torra artesanal. Origem que acolhe. Sabor que fica. Site demonstrativo de marca fictícia.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Grão de Bruma Cafés Especiais">
+<meta property="og:description" content="Origem que acolhe. Sabor que fica.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--PAGE-->
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<p class="demo-bar" role="note">
+  <strong>Site demonstrativo.</strong> A Grão de Bruma é uma marca fictícia: produtos, preços e estoque são ilustrativos e nenhuma compra é processada.
+</p>
+
+<header class="site-header" id="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#topo" aria-label="Grão de Bruma, voltar ao início">
+      <svg class="brand-mark" viewBox="0 0 210 210" aria-hidden="true">
+        <circle cx="105" cy="105" r="91" fill="#24372D"/>
+        <path d="M105 38 C68 56 54 89 65 120 C75 150 94 169 105 175 C137 158 157 127 151 96 C147 69 127 49 105 38 Z" fill="#D9C8A3"/>
+        <path d="M102 47 C91 72 91 91 103 109 C115 128 118 145 108 166" fill="none" stroke="#24372D" stroke-width="8" stroke-linecap="round"/>
+        <path d="M48 60 C68 47 85 43 102 43" fill="none" stroke="#B76E45" stroke-width="5" stroke-linecap="round"/>
+        <path d="M120 169 C141 164 156 150 166 131" fill="none" stroke="#B76E45" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Grão de Bruma</span>
+        <span class="brand-sub">Cafés especiais</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="menu" aria-label="Principal">
+      <a href="#cafes">Cafés</a>
+      <a href="#perfis">Perfis</a>
+      <a href="#escolher">Como escolher</a>
+      <a href="#origem">Origem</a>
+      <a href="#preparo">Preparo</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" type="button" id="search-open" aria-label="Pesquisar cafés">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" type="button" id="cart-open" aria-haspopup="dialog" aria-controls="cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="sr-only" id="cart-btn-label">Sacola, 0 itens</span>
+        <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" id="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- Hero: a bruma se dissipa sobre a serra ao carregar -->
+  <section class="hero" id="topo" aria-labelledby="hero-title">
+    <div class="hero-scene" aria-hidden="true">
+      <div class="hero-photo" id="hero-photo"></div>
+      <svg class="ridges" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <filter id="fog" x="-10%" y="-40%" width="120%" height="180%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.004 0.018" numOctaves="4" seed="7"/>
+            <feColorMatrix values="0 0 0 0 0.96  0 0 0 0 0.94  0 0 0 0 0.89  0 0 0 1.6 -0.55"/>
+            <feGaussianBlur stdDeviation="6"/>
+            <feComposite in2="SourceGraphic" operator="in"/>
+          </filter>
+          <filter id="fog-thick" x="-10%" y="-40%" width="120%" height="180%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.003 0.012" numOctaves="3" seed="3"/>
+            <feColorMatrix values="0 0 0 0 0.96  0 0 0 0 0.94  0 0 0 0 0.89  0 0 0 2.6 -0.35"/>
+            <feGaussianBlur stdDeviation="10"/>
+            <feComposite in2="SourceGraphic" operator="in"/>
+          </filter>
+          <linearGradient id="fog-fade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+            <stop offset=".35" stop-color="#fff"/>
+            <stop offset=".8" stop-color="#fff"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path class="ridge r1" d="M0 300 C120 250 220 210 330 230 C450 252 520 170 640 150 C760 130 840 210 960 200 C1080 190 1180 120 1300 140 C1370 152 1410 170 1440 180 V520 H0Z"/>
+        <g class="fog-band f1"><rect x="-120" y="220" width="1680" height="150" fill="url(#fog-fade)" filter="url(#fog)"/></g>
+        <path class="ridge r2" d="M0 370 C140 330 260 300 380 320 C520 344 600 270 720 262 C860 252 940 330 1080 320 C1200 312 1320 270 1440 280 V520 H0Z"/>
+        <g class="fog-band f2"><rect x="-120" y="320" width="1680" height="130" fill="url(#fog-fade)" filter="url(#fog)"/></g>
+        <path class="ridge r3" d="M0 440 C180 410 330 392 480 405 C640 420 760 370 900 372 C1060 374 1160 420 1300 412 C1370 408 1410 400 1440 398 V520 H0Z"/>
+        <g class="fog-dense">
+          <rect class="veil" x="-200" y="120" width="1840" height="400"/>
+          <rect x="-200" y="20" width="1840" height="200" fill="url(#fog-fade)" filter="url(#fog-thick)"/>
+          <rect x="-200" y="160" width="1840" height="360" fill="url(#fog-fade)" filter="url(#fog-thick)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <h1 id="hero-title"><span>Origem que acolhe.</span> <span>Sabor que fica.</span></h1>
+        <p class="lede">Cafés especiais de pequenos produtores da Mantiqueira de Minas, torrados com cuidado e apresentados com tudo o que você precisa para escolher: notas, torra, intensidade e o melhor jeito de preparar.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#cafes">Conhecer os cafés</a>
+          <a class="btn btn-ghost" href="#perfis">Descobrir meu perfil</a>
+        </div>
+      </div>
+      <figure class="hero-pack" aria-hidden="true">
+        <div id="hero-bag"></div>
+        <figcaption>Embalagem ilustrativa</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Catálogo -->
+  <section class="section" id="cafes" aria-labelledby="cafes-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="cafes-title">Cinco caminhos para o seu ritual</h2>
+        <p class="section-note">Embalagens de 250 g, em grãos ou moídos para o seu método. Valores de demonstração.</p>
+      </div>
+
+      <div class="toolbar" role="search">
+        <div class="field search-field">
+          <label for="q" class="sr-only">Pesquisar por nome, nota ou método</label>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+          <input id="q" type="search" placeholder="Pesquise: caramelo, V60, espresso…" autocomplete="off">
+        </div>
+        <div class="chips" role="group" aria-label="Categoria">
+          <button type="button" class="chip" data-cat="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="chip" data-cat="cafes-especiais" aria-pressed="false">Cafés especiais</button>
+          <button type="button" class="chip" data-cat="kits" aria-pressed="false">Kits</button>
+        </div>
+        <div class="field sort-field">
+          <label for="sort">Ordenar</label>
+          <select id="sort">
+            <option value="destaque">Destaque</option>
+            <option value="preco-asc">Menor preço</option>
+            <option value="preco-desc">Maior preço</option>
+            <option value="nome">Nome (A–Z)</option>
+          </select>
+        </div>
+      </div>
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+
+      <ul class="product-grid" id="product-grid"></ul>
+
+      <div class="empty" id="empty" hidden>
+        <p>Nenhum café corresponde a essa busca. Tente outra nota ou método, ou limpe os filtros.</p>
+        <button type="button" class="btn btn-ghost" id="clear-filters">Limpar filtros</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Perfis: o grão torra conforme o controle avança -->
+  <section class="section section-tint" id="perfis" aria-labelledby="perfis-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="perfis-title">Qual torra combina com você?</h2>
+        <p class="section-note">Arraste o grão pela escala. Torras claras preservam acidez e aromas florais; torras mais escuras trazem corpo e notas de chocolate amargo.</p>
+      </div>
+
+      <div class="roaster">
+        <label class="sr-only" for="roast">Ponto de torra</label>
+        <div class="roast-track">
+          <input type="range" id="roast" min="0" max="100" step="1" value="50" aria-valuetext="Torra média">
+          <div class="roast-ticks" aria-hidden="true">
+            <span style="--at:12%">Clara</span>
+            <span style="--at:50%">Média</span>
+            <span style="--at:86%">Média-escura</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profiles" id="profiles">
+        <article class="profile" data-zone="clara">
+          <h3>Floral e aromático</h3>
+          <p class="notes">Flores, frutas cítricas e mel</p>
+          <p>Xícara leve e perfumada, com acidez viva. Brilha em métodos filtrados como V60 e Kalita.</p>
+          <button type="button" class="link-btn" data-filter-q="floral">Ver Floral de Altitude</button>
+        </article>
+        <article class="profile" data-zone="media">
+          <h3>Doce e equilibrado</h3>
+          <p class="notes">Chocolate ao leite, caramelo e castanhas</p>
+          <p>O café do dia a dia, com doçura perceptível e final macio. Vai bem no coado e na prensa francesa.</p>
+          <button type="button" class="link-btn" data-filter-q="equilibrada">Ver Mantiqueira e Sereno</button>
+        </article>
+        <article class="profile" data-zone="escura">
+          <h3>Intenso e encorpado</h3>
+          <p class="notes">Chocolate amargo, avelã e especiarias</p>
+          <p>Corpo marcante e presença no paladar. Feito para espresso e bebidas com leite.</p>
+          <button type="button" class="link-btn" data-filter-q="espresso">Ver Espresso Intenso</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como escolher -->
+  <section class="section" id="escolher" aria-labelledby="escolher-title">
+    <div class="wrap split">
+      <div class="split-copy">
+        <h2 id="escolher-title">Comece pelo seu método de preparo</h2>
+        <p>A moagem certa depende de quanto tempo a água fica em contato com o café. Quanto mais curto o contato, mais fina a moagem.</p>
+        <p>Se você tem moedor em casa, prefira grãos inteiros e moa na hora: o aroma dura mais. Se não tem, escolha a moagem do seu método na hora de adicionar à sacola.</p>
+      </div>
+      <div class="table-scroll">
+        <table class="grind-table">
+          <caption class="sr-only">Moagem recomendada por método de preparo</caption>
+          <thead>
+            <tr><th scope="col">Método</th><th scope="col">Moagem</th><th scope="col">Contato com a água</th><th scope="col">Sugestão</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Espresso</th><td><span class="grain g1" aria-hidden="true"></span>Fina</td><td>25 a 30 s</td><td>Espresso Intenso</td></tr>
+            <tr><th scope="row">V60 e Kalita</th><td><span class="grain g2" aria-hidden="true"></span>Média-fina</td><td>2 a 3 min</td><td>Floral de Altitude</td></tr>
+            <tr><th scope="row">Coado (papel ou pano)</th><td><span class="grain g3" aria-hidden="true"></span>Média</td><td>3 a 4 min</td><td>Mantiqueira, Sereno</td></tr>
+            <tr><th scope="row">Prensa francesa</th><td><span class="grain g4" aria-hidden="true"></span>Grossa</td><td>4 min</td><td>Mantiqueira</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">Tempos aproximados. Ajuste ao seu gosto e ao seu equipamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Origem -->
+  <section class="section section-dark" id="origem" aria-labelledby="origem-title">
+    <div class="wrap origin">
+      <div class="origin-copy">
+        <h2 id="origem-title">Da neblina da serra para a sua mesa</h2>
+        <p>A Grão de Bruma nasceu em São Lourenço, no sul de Minas, em meio às montanhas da Mantiqueira. Nas manhãs de bruma, o café amadurece devagar, e é esse tempo que queremos levar até você.</p>
+        <p>Trabalhamos com o conceito de lotes de pequenos produtores da região, torra em pequenas quantidades e informação clara em cada embalagem.</p>
+        <div class="origin-photo" id="origin-photo" hidden></div>
+      </div>
+      <ul class="principles">
+        <li><h3>Procedência à vista</h3><p>Origem, torra e notas de cada café descritas na embalagem e no site, sem promessas que não podemos comprovar.</p></li>
+        <li><h3>Torra com calma</h3><p>Pequenos lotes, perfil de torra pensado para cada café e para o preparo que ele pede.</p></li>
+        <li><h3>Café sem cerimônia</h3><p>Explicamos os termos e ajudamos a escolher, seja seu primeiro café especial ou o centésimo.</p></li>
+      </ul>
+    </div>
+    <p class="wrap origin-note">Marca e história fictícias, criadas para esta demonstração.</p>
+  </section>
+
+  <!-- Guia de preparo -->
+  <section class="section" id="preparo" aria-labelledby="preparo-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="preparo-title">Receitas para começar bem</h2>
+        <p class="section-note">Pontos de partida, não regras. Prove, ajuste a moagem e a proporção até encontrar a sua xícara.</p>
+      </div>
+      <div class="guides">
+        <article class="guide" data-guide="v60">
+          <p class="guide-ratio"><span>1:16</span> 15 g de café para 250 ml de água</p>
+          <h3>V60</h3>
+          <p>Realça a acidez e os aromas. Ideal para o Floral de Altitude.</p>
+          <details>
+            <summary>Ver passo a passo</summary>
+            <ol>
+              <li>Aqueça a água a cerca de 92–96 °C e escalde o filtro.</li>
+              <li>Moa 15 g de café em moagem média-fina.</li>
+              <li>Despeje 30 ml de água e aguarde 30 s para a pré-infusão.</li>
+              <li>Complete até 250 ml em movimentos circulares lentos.</li>
+              <li>A extração deve terminar entre 2 min 30 s e 3 min.</li>
+            </ol>
+          </details>
+        </article>
+        <article class="guide" data-guide="prensa">
+          <p class="guide-ratio"><span>1:15</span> 20 g de café para 300 ml de água</p>
+          <h3>Prensa francesa</h3>
+          <p>Mais corpo e textura. Combina com o Mantiqueira.</p>
+          <details>
+            <summary>Ver passo a passo</summary>
+            <ol>
+              <li>Moa 20 g de café em moagem grossa.</li>
+              <li>Adicione 300 ml de água quente e mexa suavemente.</li>
+              <li>Tampe sem pressionar e aguarde 4 min.</li>
+              <li>Pressione o êmbolo devagar e sirva logo, para não amargar.</li>
+            </ol>
+          </details>
+        </article>
+        <article class="guide" data-guide="espresso">
+          <p class="guide-ratio"><span>18 g</span> para cerca de 36 ml na xícara</p>
+          <h3>Espresso</h3>
+          <p>Concentrado e encorpado. Pede o Espresso Intenso.</p>
+          <details>
+            <summary>Ver passo a passo</summary>
+            <ol>
+              <li>Moa 18 g de café em moagem fina, logo antes do preparo.</li>
+              <li>Distribua e compacte o pó com pressão uniforme.</li>
+              <li>Extraia cerca de 36 ml em 25 a 30 s.</li>
+              <li>Ajuste a moagem: mais fina se sair rápido, mais grossa se demorar.</li>
+            </ol>
+          </details>
+        </article>
+        <article class="guide" data-guide="conservacao">
+          <p class="guide-ratio"><span>4 cuidados</span> contra ar, luz, calor e umidade</p>
+          <h3>Conservação</h3>
+          <p>O café perde aroma depois de aberto. Estes hábitos ajudam a mantê-lo.</p>
+          <details>
+            <summary>Ver dicas</summary>
+            <ol>
+              <li>Feche bem a embalagem ou use um pote opaco com tampa.</li>
+              <li>Guarde em local fresco e seco, longe do fogão e da luz.</li>
+              <li>Evite a geladeira: a umidade prejudica o café.</li>
+              <li>Moa apenas a quantidade que vai preparar.</li>
+            </ol>
+          </details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dúvidas -->
+  <section class="section section-tint" id="duvidas" aria-labelledby="duvidas-title">
+    <div class="wrap faq-wrap">
+      <h2 id="duvidas-title">Antes de pedir</h2>
+      <div class="faq">
+        <details>
+          <summary>Como escolher um café?</summary>
+          <div class="faq-body"><p>Pense no que você gosta na xícara. Se prefere algo doce e macio, comece pelo Mantiqueira. Se gosta de bebidas intensas, Espresso Intenso. Se quer explorar aromas, Floral de Altitude. Na dúvida, o Kit Descoberta traz três perfis em embalagens de 100 g.</p></div>
+        </details>
+        <details>
+          <summary>Qual moagem devo selecionar?</summary>
+          <div class="faq-body"><p>A do seu método de preparo: fina para espresso, média-fina para V60, média para coado e grossa para prensa francesa. A tabela em <a href="#escolher">Como escolher</a> resume tudo.</p></div>
+        </details>
+        <details>
+          <summary>Os cafés são enviados em grãos inteiros?</summary>
+          <div class="faq-body"><p>Você escolhe. Cada café mostra apenas as moagens disponíveis para ele, e grãos inteiros estão sempre entre as opções.</p></div>
+        </details>
+        <details>
+          <summary>Como conservar o café depois de abrir?</summary>
+          <div class="faq-body"><p>Em embalagem bem fechada ou pote opaco, em local fresco e seco, fora da geladeira. Veja mais em <a href="#preparo">Guia de preparo</a>.</p></div>
+        </details>
+        <details>
+          <summary>Quais são as formas de pagamento e entrega?</summary>
+          <div class="faq-body"><p>Ainda não definidas. Este é um site demonstrativo: não há pagamento, frete ou envio configurados, e nenhum pedido é processado.</p></div>
+        </details>
+        <details>
+          <summary>Qual é a política de troca e devolução?</summary>
+          <div class="faq-body"><p>Em elaboração. A política será publicada antes do início das vendas.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <p class="brand-name">Grão de Bruma</p>
+      <p class="footer-slogan">Origem que acolhe. Sabor que fica.</p>
+      <p>São Lourenço, Minas Gerais</p>
+    </div>
+    <nav aria-label="Rodapé">
+      <h2 class="footer-h">Navegue</h2>
+      <ul>
+        <li><a href="#cafes">Cafés</a></li>
+        <li><a href="#escolher">Como escolher</a></li>
+        <li><a href="#preparo">Guia de preparo</a></li>
+        <li><a href="#duvidas">Dúvidas frequentes</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2 class="footer-h">Políticas</h2>
+      <ul class="muted-list">
+        <li>Privacidade <span class="tag">em elaboração</span></li>
+        <li>Termos de uso <span class="tag">em elaboração</span></li>
+        <li>Entrega <span class="tag">em elaboração</span></li>
+        <li>Trocas e devoluções <span class="tag">em elaboração</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Atendimento</h2>
+      <p>Canal de contato ainda não configurado.</p>
+    </div>
+  </div>
+  <div class="wrap photo-credits" id="photo-credits" hidden></div>
+  <p class="wrap footer-legal">© 2026 Grão de Bruma. Marca fictícia criada para demonstração; dados comerciais ilustrativos.</p>
+</footer>
+
+<!-- Sacola -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="cart" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+  <div class="cart-head">
+    <h2 id="cart-title">Sua sacola</h2>
+    <button type="button" class="icon-btn" id="cart-close" aria-label="Fechar sacola">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <ul class="cart-items" id="cart-items"></ul>
+  <div class="cart-empty" id="cart-empty">
+    <p>Sua sacola está vazia. Escolha um café para começar.</p>
+    <a class="btn btn-ghost" href="#cafes" id="cart-browse">Conhecer os cafés</a>
+  </div>
+  <div class="cart-foot" id="cart-foot">
+    <div class="cart-row"><span>Subtotal</span><strong id="cart-subtotal">R$ 0,00</strong></div>
+    <p class="cart-small">Frete calculado no checkout. Nenhuma regra de frete está configurada nesta demonstração.</p>
+    <button type="button" class="btn btn-primary btn-block" id="checkout">Finalizar compra</button>
+    <p class="checkout-msg" id="checkout-msg" role="status" hidden></p>
+  </div>
+</aside>
+
+<p class="sr-only" id="announcer" aria-live="polite"></p>
+<div class="toast" id="toast" aria-hidden="true"></div>
+<!--/PAGE-->
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
