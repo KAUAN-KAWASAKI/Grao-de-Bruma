@@ -457,6 +457,22 @@
     });
   }
   $("#hero-bag").innerHTML = bagSVG(byId["gdb-001"]);
+
+  /* Vídeo do topo: toca sozinho e sem som; com movimento reduzido fica parado na imagem de capa */
+  var heroVideo = $("#hero-video"), videoToggle = $("#video-toggle");
+  if (heroVideo) {
+    var setToggle = function () {
+      var paused = heroVideo.paused;
+      videoToggle.classList.toggle("paused", paused);
+      videoToggle.setAttribute("aria-label", paused ? "Reproduzir o vídeo" : "Pausar o vídeo");
+    };
+    heroVideo.addEventListener("play", setToggle);
+    heroVideo.addEventListener("pause", setToggle);
+    videoToggle.addEventListener("click", function () { if (heroVideo.paused) heroVideo.play(); else heroVideo.pause(); });
+    videoToggle.hidden = false;
+    if (!reduceMotion) { var tryPlay = heroVideo.play(); if (tryPlay && tryPlay.catch) tryPlay.catch(setToggle); }
+    setToggle();
+  }
   renderCatalog();
   renderCart();
   wirePhotos();
@@ -484,7 +500,7 @@
 
   /* Paralaxe na serra do topo: camadas mais próximas se movem mais ao rolar */
   if (!reduceMotion) {
-    var layers = [[".ridge.r1", .06], [".fog-band.f1", .1], [".ridge.r2", .13], [".fog-band.f2", .17], [".ridge.r3", .22], [".hero-pack", -.08]]
+    var layers = [[".ridge.r1", .06], [".fog-band.f1", .1], [".ridge.r2", .13], [".fog-band.f2", .17], [".ridge.r3", .22], [".hero-media", -.08]]
       .map(function (l) { return [document.querySelector(l[0]), l[1]]; })
       .filter(function (l) { return l[0]; });
     var heroEl = $("#topo"), ticking = false;

@@ -113,9 +113,18 @@
           <a class="btn btn-ghost" href="#perfis">Descobrir meu perfil</a>
         </div>
       </div>
-      <figure class="hero-pack" aria-hidden="true">
-        <div id="hero-bag"></div>
-        <figcaption>Embalagem ilustrativa</figcaption>
+      <figure class="hero-media">
+        <div class="hero-video">
+          <video id="hero-video" muted loop playsinline preload="auto" poster="assets/cafe-fumaca-poster.jpg" aria-label="Espresso sendo extraído na xícara, com o vapor subindo">
+            <source src="assets/cafe-fumaca.webm" type="video/webm">
+            <source src="assets/cafe-fumaca.mp4" type="video/mp4">
+          </video>
+          <button class="video-toggle" id="video-toggle" type="button" aria-label="Pausar o vídeo" hidden>
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+        </div>
+        <div class="hero-sticker" id="hero-bag" aria-hidden="true"></div>
       </figure>
     </div>
   </section>
