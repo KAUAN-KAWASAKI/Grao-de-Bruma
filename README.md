@@ -9,7 +9,7 @@ Landing page demonstrativa da **Grão de Bruma Cafés Especiais**, uma marca fic
 - Catálogo com 5 cafés: pesquisa, filtro por categoria, ordenação e escolha de moagem.
 - Sacola funcional (salva no navegador) com subtotal; o checkout só mostra uma mensagem de demonstração.
 - Escala de torra interativa, tabela de moagem por método, receitas de preparo e dúvidas frequentes.
-- Vídeo no topo: espresso sendo extraído com o vapor subindo, em loop contínuo e sem som, com botão para pausar.
+- Vídeo de fundo no topo: espresso sendo extraído com o vapor subindo, em loop contínuo e sem som, com botão para pausar. No computador usa a versão horizontal e no celular a vertical.
 - Animações: bruma que se dissipa no topo, paralaxe nas montanhas, seções que aparecem ao rolar, grão que voa até a sacola. Quem ativa "reduzir movimento" no aparelho vê a página sem animações.
 
 ## Como rodar
