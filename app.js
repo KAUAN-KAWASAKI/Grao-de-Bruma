@@ -463,9 +463,15 @@
   if (heroVideo && heroVideo.canPlayType) {
     var narrow = window.matchMedia("(max-width: 760px)").matches;
     var base = "assets/cafe-fumaca" + (narrow ? "" : "-largo");
-    var webm = heroVideo.canPlayType('video/webm; codecs="vp9"');
+    /* MP4 (H.264) toca em qualquer navegador; WebM, mais leve, só onde o suporte é garantido.
+       Se o WebM falhar, volta para o MP4. */
+    var apple = /Apple/.test(navigator.vendor || "");
+    var webm = !apple && heroVideo.canPlayType('video/webm; codecs="vp9"') === "probably";
     heroVideo.poster = base + "-poster.jpg";
     heroVideo.src = base + (webm ? ".webm" : ".mp4");
+    heroVideo.addEventListener("error", function () {
+      if (/\.webm$/.test(heroVideo.src)) { heroVideo.src = base + ".mp4"; if (!reduceMotion) heroVideo.play().catch(function () {}); }
+    });
     var setToggle = function () {
       var paused = heroVideo.paused;
       videoToggle.classList.toggle("paused", paused);
